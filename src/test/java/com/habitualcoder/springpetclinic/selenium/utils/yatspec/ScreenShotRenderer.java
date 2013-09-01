@@ -7,6 +7,11 @@ import java.io.FileOutputStream;
 
 public class ScreenShotRenderer implements Renderer<ScreenShotHolder> {
     private File yatspecOutputDir;
+    private String testName;
+
+    public ScreenShotRenderer(String testName) {
+        this.testName = testName;
+    }
 
     @Override
     public String render(ScreenShotHolder screenShotHolder) throws Exception {
@@ -27,6 +32,7 @@ public class ScreenShotRenderer implements Renderer<ScreenShotHolder> {
     }
 
     protected String getImageName() {
-        return String.format("test-%s%s", this.getClass().getSimpleName(), ".png");
+        String timestamp = Long.toString(System.currentTimeMillis());
+        return String.format("test-%s-%s.png", testName, timestamp);
     }
 }

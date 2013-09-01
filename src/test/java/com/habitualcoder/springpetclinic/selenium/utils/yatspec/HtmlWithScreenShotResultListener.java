@@ -10,12 +10,12 @@ public class HtmlWithScreenShotResultListener implements SpecResultListener{
     private final ScreenShotRenderer screenShotRenderer;
     private HtmlResultRenderer delegate;
 
-
-    public HtmlWithScreenShotResultListener() {
+    public HtmlWithScreenShotResultListener(String testName) {
         delegate = new HtmlResultRenderer();
-        screenShotRenderer = new ScreenShotRenderer();
+        screenShotRenderer = new ScreenShotRenderer(testName);
         delegate.withCustomRenderer(ScreenShotHolder.class, screenShotRenderer);
     }
+
     @Override
     public void complete(File yatspecOutputDir, Result result) throws Exception {
         screenShotRenderer.setYatspecOutputDir(yatspecOutputDir);

@@ -78,6 +78,7 @@ public class SpringPetClinicWebDriverTestSupport extends TestState implements Wi
 
     @Override
     public Iterable<SpecResultListener> getResultListeners() throws Exception {
-        return Arrays.asList((SpecResultListener) new HtmlWithScreenShotResultListener());
+        String testName = this.getClass().getSimpleName();
+        return Arrays.asList((SpecResultListener) new HtmlWithScreenShotResultListener(testName));
     }
 }
