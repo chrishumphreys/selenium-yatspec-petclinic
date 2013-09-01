@@ -1,7 +1,7 @@
 selenium-yatspec-petclinic
 ==========================
 
-A Demonstration of using Selenium and Yatspec using the Spring Pet Clinic application as a target.
+A Demonstration of using Selenium-Java and Yatspec for BDD style Selenium tests. Uses the Spring Pet Clinic application as a target.
 
 Make sure you are using Maven 3 and JDK7 and have a recent Firefox installed.
 
